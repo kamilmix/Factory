@@ -9,10 +9,13 @@ package factory;
  *
  * @author Kamil
  */
-public class DaoFactory {
-    Person osoba = new Person(3,"Kamil","Mucha");
-    
-    IDaoFactory factory;
-    
+public class FactoryXML implements IDaoFactory{
+
+    @Override
+    public Person getPersonById(int id) {
+        Person nowy;
+        nowy = new Person(1,"Adam","XML");
+        return nowy;
+    }
     
 }
