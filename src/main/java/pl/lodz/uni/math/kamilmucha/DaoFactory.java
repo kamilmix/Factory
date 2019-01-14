@@ -5,29 +5,25 @@
  */
 package pl.lodz.uni.math.kamilmucha;
 
+import java.util.EnumMap;
+
 /**
  *
  * @author Kamil
  */
 public class DaoFactory {
 
-    public static final int XML=1;
-    public static final int DATABASE=2;
-
-    
     private IDaoFactory factory;
+    private static final EnumMap<FactorySource, IDaoFactory> factoryEnumMap = new EnumMap<>(FactorySource.class);
 
-    public void setSource(int whichFactory){
+    public void setSource(FactorySource source){
+       factory = factoryEnumMap.get(source);
+    }
 
-        switch (whichFactory){
-            case XML:
-                factory = new FactoryXML();
-                break;
-            case DATABASE:
-                factory = new FactoryDB();
-                break;
-        }
-
+    static
+    {
+        factoryEnumMap.put(FactorySource.DATABASE, new FactoryDB());
+        factoryEnumMap.put(FactorySource.XML, new FactoryXML());
     }
 
     public Person getPersonById(int id){

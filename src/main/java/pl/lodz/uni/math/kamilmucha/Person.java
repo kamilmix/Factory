@@ -11,16 +11,16 @@ package pl.lodz.uni.math.kamilmucha;
  */
 class Person {
     private int id;
-    private String imie;
-    private String nazwisko;
+    private String firstName;
+    private String lastName;
 
-    public Person(int id, String imie, String nazwisko) {
+    public Person(int id, String firstName, String lastName) {
         this.id = id;
-        this.imie = imie;
-        this.nazwisko = nazwisko;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String show(){
-        return id + " " + imie + " " + nazwisko;
+        return id + " " + firstName + " " + lastName;
     }
 }

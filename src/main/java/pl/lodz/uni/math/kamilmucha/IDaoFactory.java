@@ -9,13 +9,6 @@ package pl.lodz.uni.math.kamilmucha;
  *
  * @author Kamil
  */
-public class FactoryDB implements IDaoFactory{
-
-    @Override
-    public Person getPersonById(int id) {
-        Person nowy;
-        nowy = new Person(2,"Adam","DB");
-        return nowy;
-    }
-    
+public interface IDaoFactory {
+   public Person getPersonById(int id);
 }

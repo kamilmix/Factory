@@ -9,13 +9,11 @@ package pl.lodz.uni.math.kamilmucha;
  *
  * @author Kamil
  */
-public class FactoryXML implements IDaoFactory{
+public class FactoryDB implements IDaoFactory{
 
     @Override
     public Person getPersonById(int id) {
-        Person nowy;
-        nowy = new Person(1,"Adam","XML");
-        return nowy;
+        return new Person(2,"Adam","DB");
     }
     
 }
